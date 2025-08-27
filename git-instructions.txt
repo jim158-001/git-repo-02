@@ -1,0 +1,32 @@
+
+
+"C:\Users\James.Robinson\OneDrive - Applicable Ltd\Documents\Product\Repos\"
+cd "/c/Users/James.Robinson/OneDrive - Applicable Ltd/Documents/Product/Repos/git-repo-01"
+
+mkdir my-project
+cd my-project
+git init
+
+
+git config --global user.name "James Robinson"
+git config --global user.email "james.robinson@applicable.com"
+
+
+
+git add .
+git commit -m "git-instructions.txt"
+
+
+ssh-keygen -t ed25519 -C "james.robinson@applicable.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+clip < ~/.ssh/id_ed25519.pub
+
+
+
+ssh -T james.robinson@applicable.com
+
+git remote add origin james.robinson@applicable.com:jim158-001/git-repo-01.git
+
+git push -u origin master
+git push -u origin main
