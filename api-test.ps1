@@ -9,3 +9,11 @@ Invoke-RestMethod -Uri $uri3 -Method Get
 
 $uri4 = 'https://apim-uks-amp-core-dev-001.azure-api.net/insights/v1/voice/phonenumbers/15550001007'
 Invoke-RestMethod -Uri $uri4 -Method Get
+
+$uri5 = 'https://apim-uks-amp-core-dev-001.azure-api.net/insights/v1/voice/phonenumbers?status=assigned'
+Invoke-RestMethod -Uri $uri5 -Method Get
+
+$uri6 = 'https://apim-uks-amp-core-dev-001.azure-api.net/insights/v1/voice/phonenumbers/+15550001001?status=assigned'
+$uri6 = 'https://apim-uks-amp-core-dev-001.azure-api.net/insights/v1/voice/phonenumbers/+15550001005?status=assigned'
+Invoke-RestMethod -Uri $uri6 -Method Get
+
