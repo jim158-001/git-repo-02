@@ -21,3 +21,11 @@ $uri6 = 'https://apim-uks-amp-core-dev-001.azure-api.net/insights/v1/voice/phone
 $uri6 = 'https://apim-uks-amp-core-dev-001.azure-api.net/insights/v1/voice/phonenumbers/+15550001005?status=assigned'
 Invoke-RestMethod -Uri $uri6 -Method Get
 
+
+
+$baseURI = 'https://apim-uks-amp-core-dev-001.azure-api.net/insights/v1'
+Invoke-RestMethod -Uri ($baseURI+'/voice/phonenumbers?sitecode=nyc1')
+Invoke-RestMethod -Uri ($baseURI+'/voice/phonenumbers?sitecode=nyc1&status=assigned&pagesize=3')
+(Invoke-RestMethod -Uri ($baseURI+'/voice/phonenumbers?pageNumber=1&pageSize=3&sitecode=nyc1&status=assigned')).items
+
+(Invoke-RestMethod -Uri ($baseURI+'/voice/phonenumbers?sitecode=LON1&status=Assigned&pageSize=1')).items
