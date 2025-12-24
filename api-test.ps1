@@ -29,3 +29,19 @@ Invoke-RestMethod -Uri ($baseURI+'/voice/phonenumbers?sitecode=nyc1&status=assig
 (Invoke-RestMethod -Uri ($baseURI+'/voice/phonenumbers?pageNumber=1&pageSize=3&sitecode=nyc1&status=assigned')).items
 
 (Invoke-RestMethod -Uri ($baseURI+'/voice/phonenumbers?sitecode=LON1&status=Assigned&pageSize=1')).items
+
+
+$uri10 = 'https://api.insights.ampdev.applicable.com/v1/voice/sites?pagesize=2'
+Invoke-RestMethod -Uri $uri10 -Method Get
+
+curl -X GET -H "Ocp-Apim-Subscription-Key: c38ea0a2f6684e2691a4d594eb6d6585" -i 'https://api.insights.ampdev.applicable.com/v1/voice/sites?pagesize=2'
+curl -X GET -H "Ocp-Apim-Subscription-Key: c38ea0a2f6684e2691a4d594eb6d6585" -H "Accept: application/json" -i 'https://api.insights.ampdev.applicable.com/v1/voice/sites?pagesize=2'
+
+
+
+$uri = "https://api.insights.ampdev.applicable.com/v1/voice/sites?pagesize=3"
+$headers = @{
+    "Ocp-Apim-Subscription-Key" = "c38ea0a2f6684e2691a4d594eb6d6585"
+}
+$response = Invoke-RestMethod -Uri $uri -Method GET -Headers $headers
+$response  # This
