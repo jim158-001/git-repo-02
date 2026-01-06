@@ -1,4 +1,4 @@
-$baseURI = 'https://date.nager.at/api/v3/PublicHolidays/2027/GB?Global=False'
+$baseURI = 'https://date.nager.at/api/v3/PublicHolidays/2026/GB'
 (Invoke-RestMethod -Uri ($baseURI)).count
 $response = Invoke-RestMethod -Uri ($baseURI)
 $response | Select-Object date,localname,name,Global,counties | Format-Table -AutoSize
